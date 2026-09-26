@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; style-src &#39;sha256-s9qNHD0XYPghOxd7OzGsZDzRIIhVCm3I31g2zMyJ9sw=&#39;; script-src &#39;sha256-lCUaTK6O9oBiUks805gDtcu7bpDifvugeMfANITsHmE=&#39;; img-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Cupones de descuento de MercadoLibre Argentina vigentes hoy. Tocá el código para copiarlo.">
+<title>TusCuponesHoy — cupones de MercadoLibre</title>
+<style>:root {
+  --bg: #f4f5f7; --card: #ffffff; --text: #16181d; --muted: #6b7280;
+  --border: #e3e5e9; --accent: #0b8f4a; --accent-bg: #e8f6ee;
+  --code-bg: #fff7ed; --code-border: #fb923c; --code-text: #b45309;
+  --warn-bg: #fef3c7; --warn-text: #92400e;
+  --vencido: #b91c1c; --vencido-bg: #fdecec;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111317; --card: #1b1e25; --text: #e7e9ee; --muted: #9aa1ac;
+    --border: #2a2f39; --accent: #34d399; --accent-bg: #123024;
+    --code-bg: #2a2013; --code-border: #c2762b; --code-text: #fbbf77;
+    --warn-bg: #3a2c0c; --warn-text: #fcd34d;
+    --vencido: #f87171; --vencido-bg: #3a1717;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; padding: 1.25rem 1rem 3rem; background: var(--bg); color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.4;
+}
+.wrap { max-width: 640px; margin: 0 auto; }
+header h1 { font-size: 1.5rem; margin: 0; letter-spacing: -.01em; }
+header h1 span { color: var(--accent); }
+.bajada { color: var(--muted); font-size: .9rem; margin: .25rem 0 0; }
+.actualizado { color: var(--muted); font-size: .8rem; margin: .75rem 0 1rem; }
+.aviso-viejo { background: var(--warn-bg); color: var(--warn-text); border-radius: 8px; padding: .55rem .8rem; font-size: .82rem; margin-bottom: 1rem; }
+.lista { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.cupon { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.1rem; }
+.cupon-top { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; }
+.descuento { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing: -.01em; }
+.estado { font-size: .72rem; font-weight: 700; border-radius: 999px; padding: .1rem .55rem; white-space: nowrap; }
+.estado-vigente { color: var(--accent); background: var(--accent-bg); }
+.estado-desconocido { color: var(--muted); background: var(--bg); border: 1px solid var(--border); }
+.estado-vencido { color: var(--vencido); background: var(--vencido-bg); }
+.titulo-vencidos { font-size: 1rem; color: var(--muted); margin: 2rem 0 .8rem; }
+.cupon-vencido { opacity: .6; }
+.cupon-vencido .descuento { color: var(--muted); }
+.cupon-vencido .valor { text-decoration: line-through; }
+.condiciones { color: var(--muted); font-size: .86rem; margin: .15rem 0 0; }
+.titulo { font-size: .84rem; margin: .45rem 0 0; overflow-wrap: anywhere; }
+.codigo {
+  display: flex; width: 100%; align-items: center; justify-content: space-between; gap: .75rem;
+  margin: .8rem 0 0; padding: .7rem .9rem; cursor: pointer; font: inherit; text-align: left;
+  background: var(--code-bg); color: var(--code-text); border: 1.5px dashed var(--code-border); border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+.codigo:active { transform: scale(.99); }
+.codigo .valor { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.2rem; font-weight: 800; letter-spacing: .06em; user-select: all; -webkit-user-select: all; }
+.codigo .accion { font-size: .78rem; font-weight: 600; white-space: nowrap; }
+.codigo.copiado { border-style: solid; border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+.en-link { display: block; margin: .8rem 0 0; padding: .7rem .9rem; border: 1.5px dashed var(--accent); border-radius: 10px; color: var(--accent); font-weight: 600; font-size: .9rem; text-decoration: none; }
+.pie-cupon { display: flex; align-items: center; justify-content: space-between; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; font-size: .78rem; color: var(--muted); }
+.pie-cupon a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.pie-cupon a.via { color: var(--muted); font-weight: 400; text-decoration: underline; }
+.vacio { color: var(--muted); text-align: center; padding: 2rem 0; }
+footer { color: var(--muted); font-size: .74rem; margin-top: 2rem; text-align: center; }
+footer a { color: inherit; }
+.estado-proximo { color: var(--muted); background: var(--bg); border: 1px dashed var(--border); }
+.estado-rescatable { color: var(--code-text); background: var(--code-bg); }
+.etiquetas { display: flex; gap: .35rem; flex-wrap: wrap; margin: .5rem 0 0; }
+.etiqueta { font-size: .68rem; font-weight: 700; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: .05rem .5rem; }
+.etiqueta-meli-plus { color: var(--code-text); border-color: var(--code-border); }
+.horarios { color: var(--muted); font-size: .8rem; margin: .45rem 0 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>TusCuponesHoy<span>.</span></h1>
+    <p class="bajada">Cupones de MercadoLibre Argentina. Tocá el código para copiarlo.</p>
+  </header>
+  <p class="actualizado">Actualizado <time data-generado datetime="2026-10-02T17:31:07-03:00">02/10 17:31</time> (hora de Argentina) · 3 activo(s) · 1 próximo(s) · 10 vencido(s)</p>
+  <div id="aviso-viejo" class="aviso-viejo" hidden></div>
+
+  
+
+  
+  <ul class="lista">
+    
+    <li class="cupon" data-rescate="" data-desde="2026-10-02T18:00:00+00:00" data-vence="2026-10-02T22:00:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">15% OFF</span>
+        <span class="estado estado-vigente">VIGENTE</span>
+      </div>
+      <p class="condiciones">Compra mínima $45.000 · Tope $10.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 02/10 15:00 · Vence 02/10 19:00</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 02/10 00:09 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon">
+      <div class="cupon-top">
+        <span class="descuento">$15.000 OFF</span>
+        <span class="estado estado-desconocido">SIN CONFIRMAR</span>
+      </div>
+      <p class="condiciones">Compra mínima $150.000</p>
+      
+      
+      <button type="button" class="codigo" data-copiar="INCREIBLES" aria-label="Copiar el código INCREIBLES">
+        <span class="valor">INCREIBLES</span>
+        <span class="accion">Tocá para copiar</span>
+      </button>
+      
+      <div class="pie-cupon">
+        <span>Publicado 30/09 09:45 · vía <a class="via" href="https://x.com/AhorrandoAndoAr" target="_blank" rel="noopener noreferrer nofollow">@AhorrandoAndoAr</a></span>
+        <a href="https://x.com/AhorrandoAndoAr/status/2105277959275737173" target="_blank" rel="noopener noreferrer nofollow">Ver en X →</a>
+      </div>
+    </li>
+  
+    <li class="cupon">
+      <div class="cupon-top">
+        <span class="descuento">$8.000 OFF</span>
+        <span class="estado estado-desconocido">SIN CONFIRMAR</span>
+      </div>
+      <p class="condiciones">Compra mínima $80.000</p>
+      
+      
+      <button type="button" class="codigo" data-copiar="SEVIENEMAMA" aria-label="Copiar el código SEVIENEMAMA">
+        <span class="valor">SEVIENEMAMA</span>
+        <span class="accion">Tocá para copiar</span>
+      </button>
+      
+      <div class="pie-cupon">
+        <span>Publicado 30/09 09:14 · vía <a class="via" href="https://x.com/AhorrandoAndoAr" target="_blank" rel="noopener noreferrer nofollow">@AhorrandoAndoAr</a></span>
+        <a href="https://x.com/AhorrandoAndoAr/status/2105270130838323215" target="_blank" rel="noopener noreferrer nofollow">Ver en X →</a>
+      </div>
+    </li>
+  
+  </ul>
+  
+
+  
+  <h2 class="titulo-vencidos">Próximamente</h2>
+  <ul class="lista">
+    
+    <li class="cupon" data-rescate="2026-10-02T22:00:00+00:00" data-desde="2026-10-03T03:00:00+00:00" data-vence="2026-10-04T02:59:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">20% OFF</span>
+        <span class="estado estado-proximo">PRÓXIMO</span>
+      </div>
+      <p class="condiciones">Compra mínima $50.000 · Tope $12.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span></div>
+      <p class="horarios">Rescate desde 02/10 19:00 · Uso desde 03/10 00:00 · Vence 03/10 23:59</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Rescatar en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 02/10 00:09 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+  </ul>
+  
+
+  
+  <h2 class="titulo-vencidos">Vencidos recientemente</h2>
+  <ul class="lista">
+    
+    <li class="cupon cupon-vencido" data-rescate="" data-desde="2026-10-02T12:00:00+00:00" data-vence="2026-10-02T15:00:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">15% OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $30.000 · Tope $6.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 02/10 09:00 · Vence 02/10 12:00</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 02/10 00:09 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="" data-desde="2026-10-02T12:00:00+00:00" data-vence="2026-10-02T15:00:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">$40.000 OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $400.000 · Tope $40.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 02/10 09:00 · Vence 02/10 12:00</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 02/10 00:09 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="" data-desde="2026-10-02T15:00:00+00:00" data-vence="2026-10-02T18:00:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">$20.000 OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $100.000 · Tope $20.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 02/10 12:00 · Vence 02/10 15:00</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 02/10 00:09 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="" data-desde="2026-10-01T15:00:00+00:00" data-vence="2026-10-01T18:00:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">$40.000 OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $250.000 · Tope $40.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 01/10 12:00 · Vence 01/10 15:00</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 01/10 00:52 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="" data-desde="2026-10-01T18:00:00+00:00" data-vence="2026-10-01T22:00:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">$15.000 OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $100.000 · Tope $15.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 01/10 15:00 · Vence 01/10 19:00</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 01/10 00:52 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="" data-desde="2026-10-01T22:00:00+00:00" data-vence="2026-10-02T02:59:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">15% OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $50.000 · Tope $10.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 01/10 19:00 · Vence 01/10 23:59</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 01/10 00:52 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="2026-09-30T22:00:00+00:00" data-desde="2026-10-01T03:00:00+00:00" data-vence="2026-10-02T02:59:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">$15.000 OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $100.000 · Tope $15.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span></div>
+      <p class="horarios">Rescate desde 30/09 19:00 · Uso desde 01/10 00:00 · Vence 01/10 23:59</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Rescatar en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 30/09 18:52 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="" data-desde="2026-09-30T18:00:00+00:00" data-vence="2026-09-30T22:00:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">15% OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $30.000 · Tope $5.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 30/09 15:00 · Vence 30/09 19:00</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 30/09 18:52 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="2026-09-29T22:00:00+00:00" data-desde="2026-09-30T03:00:00+00:00" data-vence="2026-10-01T02:59:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">15% OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $30.000 · Tope $6.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span></div>
+      <p class="horarios">Rescate desde 29/09 19:00 · Uso desde 30/09 00:00 · Vence 30/09 23:59</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Rescatar en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 29/09 00:19 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+    <li class="cupon cupon-vencido" data-rescate="" data-desde="2026-09-29T12:00:00+00:00" data-vence="2026-09-29T15:00:00+00:00">
+      <div class="cupon-top">
+        <span class="descuento">$15.000 OFF</span>
+        <span class="estado estado-vencido">VENCIDO</span>
+      </div>
+      <p class="condiciones">Compra mínima $100.000 · Tope $15.000</p>
+      
+      
+      <div class="etiquetas"><span class="etiqueta">Oficial</span><span class="etiqueta etiqueta-meli-plus">Requiere meli+</span></div>
+      <p class="horarios">Uso desde 29/09 09:00 · Vence 29/09 12:00</p>
+      <a class="en-link" href="https://www.mercadolibre.com.ar/ofertas/envios-gratis" target="_blank" rel="noopener noreferrer nofollow">Ver en MercadoLibre →</a>
+      
+      <div class="pie-cupon">
+        <span>Detectado 29/09 00:19 · vía MercadoLibre (oficial)</span>
+        
+      </div>
+    </li>
+  
+  </ul>
+  
+
+  <footer>
+    Sitio no oficial, sin relación con MercadoLibre. Los cupones se recopilan de publicaciones públicas
+    y pueden vencer o agotarse sin aviso: verificá las condiciones al pagar.
+  </footer>
+</div>
+<script>(function () {
+  // Compartido por el reporte local (cupones.html.j2) y el sitio público
+  // (cupones_publico.html.j2): hacer clic/tocar un elemento con
+  // data-copiar="<texto>" copia ese texto. Si el elemento tiene un hijo
+  // .accion, ahí se muestra el resultado; si no, en su title.
+  function copiar(texto) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(texto).catch(function () { return copiarViejo(texto); });
+    }
+    return copiarViejo(texto);
+  }
+
+  // Método viejo (execCommand), para navegadores sin la API moderna o que la
+  // tienen bloqueada.
+  function copiarViejo(texto) {
+    return new Promise(function (resolver, rechazar) {
+      var area = document.createElement('textarea');
+      area.value = texto;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      try { document.execCommand('copy') ? resolver() : rechazar(); } catch (e) { rechazar(e); }
+      document.body.removeChild(area);
+    });
+  }
+
+  document.addEventListener('click', function (ev) {
+    var el = ev.target.closest('[data-copiar]');
+    if (!el) return;
+    var accion = el.querySelector('.accion');
+    var original = accion ? accion.textContent : el.title;
+    function avisar(texto) { if (accion) accion.textContent = texto; else el.title = texto; }
+    copiar(el.dataset.copiar).then(function () {
+      el.classList.add('copiado');
+      avisar('¡Copiado!');
+      setTimeout(function () {
+        el.classList.remove('copiado');
+        avisar(original);
+      }, 1800);
+    }, function () {
+      var rango = document.createRange();
+      rango.selectNodeContents(el.querySelector('.valor') || el);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(rango);
+      avisar('Copialo manualmente');
+    });
+  });
+
+  // Sitio público: los cupones oficiales traen sus horarios en data-*. La
+  // página es estática (se republica cada ~2 h) y un cupón relámpago dura 3
+  // h, así que el estado se recalcula acá con la hora del teléfono. Misma
+  // lógica que estado_por_horarios() en cupones/normalizar.py.
+  var ETIQUETAS = { VIGENTE: 'VIGENTE', VENCIDO: 'VENCIDO', PROXIMO: 'PRÓXIMO', RESCATABLE: 'RESCATALO YA' };
+  function instante(iso) { var t = iso ? Date.parse(iso) : NaN; return isNaN(t) ? null : t; }
+  function estadoPorHorarios(rescate, desde, vence, ahora) {
+    if (rescate === null && desde === null && vence === null) return null;
+    if (vence !== null && ahora >= vence) return 'VENCIDO';
+    if (rescate !== null && ahora < rescate) return 'PROXIMO';
+    if (desde !== null && ahora < desde) return rescate !== null ? 'RESCATABLE' : 'PROXIMO';
+    return 'VIGENTE';
+  }
+  document.querySelectorAll('.cupon[data-vence]').forEach(function (tarjeta) {
+    var d = tarjeta.dataset;
+    var estado = estadoPorHorarios(instante(d.rescate), instante(d.desde), instante(d.vence), Date.now());
+    var badge = tarjeta.querySelector('.estado');
+    if (!estado || !badge) return;
+    badge.className = 'estado estado-' + estado.toLowerCase();
+    badge.textContent = ETIQUETAS[estado];
+    tarjeta.classList.toggle('cupon-vencido', estado === 'VENCIDO');
+  });
+
+  // Sitio público: la página es estática; si la PC que la actualiza estuvo
+  // apagada, avisar. (En el reporte local no existe ese elemento.)
+  var fecha = document.querySelector('time[data-generado]');
+  var aviso = document.getElementById('aviso-viejo');
+  if (fecha && aviso) {
+    var horas = (Date.now() - Date.parse(fecha.getAttribute('datetime'))) / 36e5;
+    if (horas > 6) {
+      aviso.textContent = 'Esta lista no se actualiza hace ' + Math.floor(horas) + ' h: algunos cupones pueden haber vencido.';
+      aviso.hidden = false;
+    }
+  }
+})();
+</script>
+</body>
+</html>
